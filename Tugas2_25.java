@@ -22,7 +22,7 @@ public class Tugas2_25 {
 
         boolean ditemukan = false;
         for (int i = 0; i < menu.length; i++) {
-            if (menu[i].equals(cari)) {
+            if (menu[i].equalsIgnoreCase(cari)) {
                 System.out.println("Menu ditemukan. Harga " + menu[i] + " adalah Rp " + harga[i]);
                 ditemukan = true;
                 break;
@@ -51,7 +51,7 @@ public class Tugas2_25 {
                 String nama = sc.nextLine();
 
                 for (int j = 0; j < menu.length; j++) {
-                    if (menu[j].equals(nama)) {
+                    if (menu[j].equalsIgnoreCase(nama)) {
                         pesanan[i] = menu[j];
                         hargaPesanan[i] = harga[j];
                         total = total + harga[j];
