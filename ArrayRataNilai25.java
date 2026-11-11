@@ -4,11 +4,19 @@ public class ArrayRataNilai25 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        int[] nilaiMhs = new int[10];
-        int total = 0;
-        double rataRata;
+        System.out.print("Masukkan jumlah mahasiswa: ");
+        int jumlah = input.nextInt();
 
+        // Validasi: ukuran array harus positif
+        while (jumlah <= 0) {
+            System.out.print("Jumlah harus lebih dari 0, masukkan lagi: ");
+            jumlah = input.nextInt();
+        }
+
+        int[] nilaiMhs = new int[jumlah];
+        int total = 0;
         int jumlahLulus = 0;
+        double rataRata;
 
         for (int i = 0; i < nilaiMhs.length; i++) {
             System.out.print("Masukkan nilai mahasiswa ke-" + (i + 1) + ": ");
@@ -18,7 +26,7 @@ public class ArrayRataNilai25 {
                 jumlahLulus++;
             }
         }
-        System.out.println("Jumlah mahasiswa lulus (> 70): " + jumlahLulus);
+
         rataRata = (double) total / nilaiMhs.length;
         System.out.println("Total nilai mahasiswa: " + total);
         System.out.println("Rata-rata nilai mahasiswa: " + rataRata);
@@ -33,8 +41,8 @@ public class ArrayRataNilai25 {
         }
         System.out.println("Nilai tertinggi: " + tertinggi);
         System.out.println("Nilai terendah: " + terendah);
+        System.out.println("Jumlah mahasiswa lulus (> 70): " + jumlahLulus);
 
-        // Predikat kelas berdasarkan nilai rata-rata
         String predikat;
         if (rataRata >= 85) {
             predikat = "SANGAT BAIK";
